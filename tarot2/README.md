@@ -1,12 +1,63 @@
-# React + Vite
+# Tarot App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mystical, interactive Tarot reading web app built with **React** and **Vite**. Users can draw Tarot cards and receive **sarcastic, AI-generated interpretations** of their reading.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
 
-## Expanding the ESLint configuration
+- Draw 3 Tarot cards at a time  
+- AI-generated interpretations for a mystical reading  
+- Dark, elegant UI with card-style layout  
+- Responsive design for desktop and mobile  
+- Environment variables for secure API keys
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## **Tech Stack**
+
+- **Frontend:** React, Vite, JavaScript, CSS  
+- **AI Integration:** Google Generative AI API  
+- **State Management:** React `useState` and `useEffect` hooks
+
+---
+
+## **Installation**
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/tarot-app.git
+cd tarot-app
+
+2. Install dependencies:
+npm install
+
+3. Create a .env file in the project root:
+VITE_GOOGLE_API_KEY=your_google_api_key_here
+
+4.npm run dev
+
+5. Open your browser at http://localhost:5173 (Vite default port)
+
+## **Usage** 
+
+Click the Draw Cards button to receive your Tarot reading.
+
+AI interpretations appear below the drawn cards.
+
+Enjoy the mystical experience!
+
+## **Contributing** 
+
+1.Fork the repository
+
+2.Create a new branch: git checkout -b feature-name
+
+3.Commit your changes: git commit -m "Add new feature"
+
+4.Push to your branch: git push origin feature-name
+
+5.Open a pull request
+
+License: MIT
