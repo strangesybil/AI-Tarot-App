@@ -1,6 +1,6 @@
-# Tarot App
+# The Bitchy Tarot 
 
-A mystical, interactive Tarot reading web app built with **React** and **Vite**. Users can draw Tarot cards and receive **sarcastic, AI-generated interpretations** of their reading.
+A sarcastic, mean Tarot reader will answer your questions. It is a web app built with **React** and **Vite**. Users can draw Tarot cards and receive **sarcastic, AI-generated interpretations** of their reading.
 
 ---
 
