@@ -8,8 +8,6 @@ A mystical, interactive Tarot reading web app built with **React** and **Vite**.
 
 - Draw 3 Tarot cards at a time  
 - AI-generated interpretations for a mystical reading  
-- Dark, elegant UI with card-style layout  
-- Responsive design for desktop and mobile  
 - Environment variables for secure API keys
 
 ---
