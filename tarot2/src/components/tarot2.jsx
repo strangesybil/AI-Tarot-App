@@ -30,9 +30,7 @@ const tarotDeck = [
 export default function Tarot() {
     const [response, setResponse] = useState("");
     const [error, setError] = useState(null);
-
-    
-
+    const [question, setQuestion] = useState(""); 
 
     async function fetchTarot() {
         function drawCards(deck, count = 3) {
@@ -43,7 +41,8 @@ export default function Tarot() {
         const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_API_KEY);
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
         const cards = drawCards(tarotDeck, 3);
-        const prompt = `You are a sarcastic and mystical tarot reader. Interpret the following three cards for the user:
+        const prompt = `You are a sarcastic and mean tarot reader. Use only prose. Do not emphasise any words. You should sound deadpan and rude. Make reference to the fact that you, the tarot reader are specifically drawing the cards. Interpret the following three cards for the user:
+        The user asked: "${question}".
         1. ${cards[0].name} — ${cards[0].meaning}
         2. ${cards[1].name} — ${cards[1].meaning}
         3. ${cards[2].name} — ${cards[2].meaning}`;
@@ -58,10 +57,17 @@ export default function Tarot() {
 }
 
  return (
-    <div>
-      <button onClick={fetchTarot}>Draw Cards</button>
-      {error && <p style={{color: "red"}}>{error}</p>}
-      {response && <p>{response}</p>}
+    <div className="container">
+      <input 
+        type="text"
+        placeholder="Ask... if you dare."
+        value={question}
+        onChange={(e) => setQuestion(e.target.value)} // e is the event object, onChange runs whenever the user types in the input
+        style={{ padding: "10px", borderRadius: "10px", width: "300px", marginBottom: "10px" }}
+      />
+      <button onClick={fetchTarot}></button> 
+      {error && <p style={{color: "red"}}>{error}</p>}  
+      {response && <div className="response">{response}</div>}
     </div>
   );
 

@@ -1,68 +1,111 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif, ByteBounce;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(147, 70, 255, 0.87);
   background-color: #242424;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'ByteBounce';
+  src: url('/assets/ByteBounce.ttf') format('truetype');
 }
 
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 a:hover {
   color: #535bf2;
 }
 
 body {
+  background:#42015b;
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  min-height:100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-family:'ByteBounce';
+  font-size: 50px;
+  color: rgb(255, 240, 101);
   line-height: 1.1;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color:#42015b;
+  display:flex;
+  flex-direction: column;  /* stack items vertically */
+  align-items: center;     /* center horizontally */
+  justify-content: center; /* center vertically */
+  gap: 10px;               /* space between elements */
+  box-sizing: border-box;
+}
+
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  width: 200px;    /* smaller width so it doesn’t push text */
+  height: 200px;   /* adjust height */
+  border: none;
+  background: url("./assets/draw.png") no-repeat center center;
+  background-size: contain;
+  background-color: transparent;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: transform 0.3s ease;
 }
+
 button:hover {
-  border-color: #646cff;
+  transform: scale(1.1);   /* slightly enlarge on hover */
+  filter: brightness(1.1);
 }
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.response {
+  font-family:'ByteBounce';
+  font-size:17px;
+  max-width: 600px;   /* keeps it readable */
+  width: 100%;        /* responsive */
+  background: rgb(255, 240, 101);  /* optional */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #42015b;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: transparent;
+  }
+
+  .response:hover{
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
   }
 }
